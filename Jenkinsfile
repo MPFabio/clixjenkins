@@ -1,0 +1,1 @@
+azureCLI commands: [[exportVariablesString: '', script: 'az group create -n Fabio-RG --location northeurope'], [exportVariablesString: '/publicIpAddress|PUBLIC_IP', script: 'az vm create -n Fabio-Linux -g Fabio-RG --image UbuntuLTS --data-disk-sizes-gb 10 20']], principalCredentialId: '692948f7-dae5-4048-8764-59ac5f958a5b'
