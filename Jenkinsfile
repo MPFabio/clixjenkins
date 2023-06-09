@@ -1,1 +1,23 @@
-azureCLI commands: [[exportVariablesString: '', script: 'az group create -n Fabio-RG --location northeurope'], [exportVariablesString: '', script: 'az vm create -n Fabio-Linux -g Fabio-RG --image UbuntuLTS --data-disk-sizes-gb 10 20'], [exportVariablesString: '', script: '']], principalCredentialId: '692948f7-dae5-4048-8764-59ac5f958a5b'
+pipeline {
+    agent any
+
+    stages {
+        stage ('AZ Group Created') {
+            steps {
+                script {
+                    sh 'az group create -n Fabio-RG --location northeurope'
+                    echo 'Resource Group Completed'
+                }    
+            }
+        }
+
+        stage ('AZ VM Created') {
+            steps {
+                script {
+                    sh 'az vm create -n Fabio-Linux -g Fabio-RG --image UbuntuLTS --data-disk-sizes-gb 10 20'
+                    echo 'VM Completed'
+                }
+            }
+        }
+    }
+}
