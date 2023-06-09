@@ -14,7 +14,7 @@ pipeline {
         stage ('AZ VM Created') {
             steps {
                 script {
-                    sh 'az vm create -n Fabio-Linux -g Fabio-RG --image UbuntuLTS --data-disk-sizes-gb 10 20'
+                    sh 'az vm create -n Fabio-Linux -g Fabio-RG --generate-ssh-keys --image UbuntuLTS --data-disk-sizes-gb 10 20'
                     echo 'VM Completed'
                 }
             }
