@@ -5,7 +5,7 @@ pipeline {
         stage ('AZ Group Created') {
             steps {
                 script {
-                    sh 'az group create -n Fabio-RG --location northeurope'
+                    sh 'az group create -n MON-RG --location northeurope'
                     echo 'Resource Group Completed'
                 }    
             }
@@ -14,7 +14,7 @@ pipeline {
         stage ('AZ VM Created') {
             steps {
                 script {
-                    sh 'az vm create -n Fabio-Linux -g Fabio-RG --generate-ssh-keys --image UbuntuLTS --data-disk-sizes-gb 10 20'
+                    sh 'az vm create -n Ma-Linux -g MON-RG --generate-ssh-keys --image UbuntuLTS --data-disk-sizes-gb 10 20'
                     echo 'VM Completed'
                 }
             }
